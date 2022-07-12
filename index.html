@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<style type="text/css">
+#p1{
+
+transform:translate(270px,805px);
+font-size:120px;
+
+}
+#b1{
+transform:translate(470px,755px);
+position:relative;
+background:#7E7C73;
+
+font-size:60px ;
+padding-top:30px;
+padding-right:30px;
+padding-left:30px;
+padding-bottom:30px;
+color:#ffffff;
+border-radius:25px;
+border:9px solid #BBC4C2;
+user-select:none;
+}
+
+
+</style>
+<body id="bgc" >
+<p id="p1">HEX COLOR :</p>
+
+<button type="button" onclick="func()" id ="b1" > 
+Click Me!
+</button> 
+
+<script>
+
+const abc="ABCDEF";
+const m=[0,1,2,3,4,5,6,7,8,9,...abc];
+
+function func(){
+
+let cc="#";
+for(let i=0;i<6;i++){
+cc=cc+String(m[Math.floor(Math.random()*m.length)]);
+}
+document.getElementById("bgc").style.backgroundColor=cc;
+document.getElementById("p1").innerHTML=`HEX COLOR  :${cc}`;
+navigator.clipboard.writeText(cc);
+document.getElementById("b1").innerHTML='copied!'; 
+
+setTimeout(()=>document.getElementById("b1").innerHTML='Click Me!',1000);
+
+
+}
+</script>
+</body>
+
+</html>
